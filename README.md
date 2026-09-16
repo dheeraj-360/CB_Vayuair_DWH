@@ -47,7 +47,7 @@ T-SQL, using SSMS.
    Filtering on `travel_date_key` lets SQL Server prune to the single relevant partition;
    filtering on `fare_class` has no relationship to the partitioning scheme, forcing a full
    scan across all 28 partitions.
-7. **Curate** — mapped every table in the pipeline to a medallion layer (bronze/silver/gold)
+7. **Curate** - mapped every table in the pipeline to a medallion layer (bronze/silver/gold)
    with a one-line reason each, and wrote a data contract for the `bronze_bookings` feed
    (schema, allowed values, freshness SLA, owner, and breaking vs. non-breaking change examples).
 
