@@ -1,4 +1,4 @@
-# Vayu Air — Warehouse Design Challenge
+# Vayu Air - Warehouse Design Challenge
 
 Data Engineering Bootcamp (Codebasics) — Session 3: Data Modeling & Warehouse Engineering
 
@@ -13,8 +13,8 @@ T-SQL, using SSMS.
 
 | File | Description |
 |---|---|
-| `VayuAir_DWH.sql` | Full T-SQL script — schema, DDL, loads, SCD2, snowflake, partitioning |
-| `VayuAir_DWH_Deliverable.docx` | Written submission — medallion mapping, data contract, execution plan evidence |
+| `VayuAir_DWH_scripts.sql` | Full T-SQL script — schema, DDL, loads, SCD2, snowflake, partitioning |
+| `VayuAir_DWH_Report.docx` | Written submission — medallion mapping, data contract, execution plan evidence |
 | `query_a_partition_prune.png` | Execution plan: query filtered on the partition key |
 | `query_b_full_scan.png` | Execution plan: query filtered on a non-partition column |
 
@@ -51,5 +51,5 @@ T-SQL, using SSMS.
    with a one-line reason each, and wrote a data contract for the `bronze_bookings` feed
    (schema, allowed values, freshness SLA, owner, and breaking vs. non-breaking change examples).
 
-See `VayuAir_DWH_Deliverable.docx` for the full write-up, including both execution plan
+See `VayuAir_DWH_Report.docx` for the full write-up, including both execution plan
 screenshots and complete reasoning for every design decision.
