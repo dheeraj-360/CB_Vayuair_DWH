@@ -1,6 +1,6 @@
 # Vayu Air - Warehouse Design Challenge
 
-Data Engineering Bootcamp (Codebasics) — Session 3: Data Modeling & Warehouse Engineering
+Data Engineering Bootcamp (Codebasics) - Session 3: Data Modeling & Warehouse Engineering
 
 ## Background
 
