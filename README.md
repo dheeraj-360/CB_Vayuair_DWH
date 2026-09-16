@@ -13,29 +13,29 @@ T-SQL, using SSMS.
 
 | File | Description |
 |---|---|
-| `VayuAir_DWH_scripts.sql` | Full T-SQL script — schema, DDL, loads, SCD2, snowflake, partitioning |
-| `VayuAir_DWH_Report.docx` | Written submission — medallion mapping, data contract, execution plan evidence |
+| `VayuAir_DWH_scripts.sql` | Full T-SQL script  schema, DDL, loads, SCD2, snowflake, partitioning |
+| `VayuAir_DWH_Report.docx` | Written submission medallion mapping, data contract, execution plan evidence |
 | `query_a_partition_prune.png` | Execution plan: query filtered on the partition key |
 | `query_b_full_scan.png` | Execution plan: query filtered on a non-partition column |
 
 ## Tasks completed
 
-1. **Grain & column classification** — declared `FactTicketSales`'s grain as one row per
+1. **Grain & column classification** - declared `FactTicketSales`'s grain as one row per
    ticket booked; classified every candidate column as a dimension key or measure; confirmed
    `fare_amount`, `tax_amount`, and `miles_earned` as additive measures.
-2. **Star schema DDL** — built the `dw` schema with `FactTicketSales` plus `dim_aircraft`,
+2. **Star schema DDL** - built the `dw` schema with `FactTicketSales` plus `dim_aircraft`,
    `dim_airport`, `dim_flight`, `dim_date`, and `dim_passenger`, each with a surrogate primary
    key and its business key retained.
-3. **Load the warehouse** — populated every dimension and the fact table from the bronze
+3. **Load the warehouse** - populated every dimension and the fact table from the bronze
    sources via lookup joins; verified the fact row count matched `bronze_bookings` exactly with
    zero orphaned foreign keys.
-4. **Snowflake the geography** — normalized `dim_airport` into `dim_airport` → `dim_city` →
+4. **Snowflake the geography** - normalized `dim_airport` into `dim_airport` → `dim_city` →
    `dim_country`, verified an airport resolves all the way up to its country.
-5. **SCD Type 2 on `dim_passenger`** — rebuilt the dimension with `effective_from`,
+5. **SCD Type 2 on `dim_passenger`** - rebuilt the dimension with `effective_from`,
    `effective_to`, and `is_current`; applied `stg_passenger_updates` using the expire-then-insert
    pattern, correctly producing two versions for changed passengers and a single current row for
    new ones.
-6. **Partition `FactTicketSales`** — created a partition function and scheme on
+6. **Partition `FactTicketSales`** - created a partition function and scheme on
    `travel_date_key` (monthly boundaries), rebuilt the clustered index on the scheme, and proved
    partition elimination with actual execution plans:
 
