@@ -6,7 +6,7 @@ Data Engineering Bootcamp (Codebasics) - Session 3: Data Modeling & Warehouse En
 
 Vayu Air is a fast-growing airline whose analytics requests were hitting its live transactional
 database directly, producing slow, inconsistent reports. This project models the raw bronze
-source tables into a proper `dw` star schema on SQL Server designed and built end-to-end in
+source tables into a proper `vayuair_dw` star schema on SQL Server designed and built end-to-end in
 T-SQL, using SSMS.
 
 ## What's in this repo
